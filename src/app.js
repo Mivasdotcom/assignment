@@ -10,6 +10,8 @@ import rateLimit from "express-rate-limit";
 const app = express();
 app.use(express.json());
 
+app.set("trust proxy", 1);
+
 const postLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 200, // allow 30 POST requests per IP per 15 mins
