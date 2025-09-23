@@ -81,3 +81,8 @@ User object CRUD operations (admin only)
 Streaming object CRUD operations
 
 Example payloads and responses
+
+
+### Production Endpoint
+https://assignment-production-8f0e.up.railway.app
+
