@@ -72,10 +72,11 @@ Admin user created: admin@example.com
 ### API Documentation 
 
 The API documentation is managed through Postman.
-You can import the provided collection (Node Js.postman_collection.json) into Postman.
+You can import the provided collection (Assignment Node js.postman_collection) into Postman.
 It includes all requests for:
 
-User registration and login
+User registration and login 
+User object CRUD operations (admin only)
 
 Streaming object CRUD operations
 
