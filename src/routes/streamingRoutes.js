@@ -5,28 +5,26 @@ import {
   createStreaming,
   updateStreaming,
   deleteStreaming,
+  playStreaming,
 } from "../controllers/streamingController.js";
 
 import { authenticate } from "../middlewares/authMiddleware.js";
+import { isAdmin } from "../middlewares/adminMiddleware.js";
 
 const router = express.Router();
 
-// 🔒 All routes require JWT authentication
+// All routes require authentication
 router.use(authenticate);
 
-// GET /api/streaming - list all streaming content
+// Public for all authenticated users
 router.get("/", getAllStreamings);
-
-// GET /api/streaming/:id - get a single streaming by ID
 router.get("/:id", getStreamingById);
+router.get("/:id/play", playStreaming);
 
-// POST /api/streaming - create new streaming content
-router.post("/", createStreaming);
+// Admin only
+router.post("/", isAdmin, createStreaming);
+router.put("/:id", isAdmin, updateStreaming);
+router.delete("/:id", isAdmin, deleteStreaming);
 
-// PUT /api/streaming/:id - update streaming content (only author)
-router.put("/:id", updateStreaming);
-
-// DELETE /api/streaming/:id - delete streaming content (only author)
-router.delete("/:id", deleteStreaming);
 
 export default router;

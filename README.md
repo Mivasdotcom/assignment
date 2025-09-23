@@ -58,6 +58,17 @@ npm run dev
 npm test
 ```
 
+
+### Create Admin user using seed script
+```bash
+node prisma/seed.js
+# You should see the following 
+
+Admin user created: admin@example.com
+
+```
+
+
 ### API Documentation 
 
 The API documentation is managed through Postman.
