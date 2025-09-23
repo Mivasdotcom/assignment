@@ -23,18 +23,21 @@ Make sure you have the following installed:
 ```bash
 git clone git@github.com-Mivasdotcom/assignment.git
 cd assignment
+```
 
 ### Install dependencies 
 ```bash 
 npm install
+```
 
 ### Create .env file in the root directory 
+```bash
 DATABASE_URL="postgresql://username:password@localhost:5432/dbname?schema=public"
 
 JWT_SECRET="your-secret-key"
 JWT_EXPIRES_IN="1h"
 PORT=3000
-
+```
 
 ### Setup Prisma 
 ```bash 
@@ -43,14 +46,17 @@ npx prisma generate
 
 # Inspect the database
 npx prisma studio
-
+```
 
 ### Running the server 
+```bash
 npm run dev
+```
 
 ### Running Tests
+```bash
 npm test
-
+```
 
 ### API Documentation 
 
